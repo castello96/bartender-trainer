@@ -1,0 +1,280 @@
+{
+    "ingredients": [
+        {
+            "id": "angostura-bitters",
+            "displayName": "Angostura Bitters",
+            "image": "images/angostura-bitters.png"
+        },
+
+        {
+            "id": "1800-coconut-tequila",
+            "displayName": "1800 Coconut Tequila",
+            "image": "images/1800-coconut-tequila.png"
+        },
+        {
+            "id": "absolut-vanilla-vodka",
+            "displayName": "Absolut Vanilla Vodka",
+            "image": "images/absolut-vanilla-vodka.png"
+        },
+        {
+            "id": "absolut-vodka",
+            "displayName": "Absolut Vodka",
+            "image": "images/absolut-vodka.png"
+        },
+        {
+            "id": "agave",
+            "displayName": "Agave Syrup",
+            "image": "images/agave.png"
+        },
+        {
+            "id": "basil",
+            "displayName": "Basil",
+            "image": "images/basil.png"
+        },
+        {
+            "id": "black-walnut-bitters",
+            "displayName": "Black Walnut Bitters",
+            "image": "images/black-walnut-bitters.png"
+        },
+        {
+            "id": "blackberry-strawberry-puree",
+            "displayName": "Blackberry & Strawberry Puree",
+            "image": "images/blackberry-strawberry-puree.png"
+        },
+        {
+            "id": "brown-sugar-rim",
+            "displayName": "Brown Sugar Rim",
+            "image": "images/brown-sugar-rim.png"
+        },
+        {
+            "id": "casamigos-blanco-tequila",
+            "displayName": "Casamigos Blanco Tequila",
+            "image": "images/casamigos-blanco-tequila.png"
+        },
+        {
+            "id": "cazadores-reposado-tequila",
+            "displayName": "Cazadores Reposado Tequila",
+            "image": "images/cazadores-reposado-tequila.png"
+        },
+        {
+            "id": "citrus-juices",
+            "displayName": "Citrus Juices",
+            "image": "images/citrus-juices.png"
+        },
+        {
+            "id": "classic-spiked-lemonade",
+            "displayName": "Classic Spiked Lemonade",
+            "image": "images/classic-spiked-lemonade.png"
+        },
+        {
+            "id": "coconut",
+            "displayName": "Coconut",
+            "image": "images/coconut.png"
+        },
+        {
+            "id": "coconut-puree",
+            "displayName": "Coconut Puree",
+            "image": "images/coconut-puree.png"
+        },
+        {
+            "id": "elderflower-liqueur",
+            "displayName": "Elderflower Liqueur",
+            "image": "images/elderflower-liqueur.png"
+        },
+        {
+            "id": "fresh-lemonade",
+            "displayName": "Fresh Lemonade",
+            "image": "images/fresh-lemonade.png"
+        },
+        {
+            "id": "fresh-lemon-juice",
+            "displayName": "Fresh Lemon Juice",
+            "image": "images/fresh-lemon-juice.png"
+        },
+        {
+            "id": "fresh-orange-juice",
+            "displayName": "Fresh Orange Juice",
+            "image": "images/fresh-orange-juice.png"
+        },
+        {
+            "id": "ginger-beer",
+            "displayName": "Ginger Beer",
+            "image": "images/ginger-beer.png"
+        },
+        {
+            "id": "guava",
+            "displayName": "Guava",
+            "image": "images/guava.png"
+        },
+        {
+            "id": "guava-nectar",
+            "displayName": "Guava Nectar",
+            "image": "images/guava-nectar.png"
+        },
+        {
+            "id": "hibiscus-flowers",
+            "displayName": "Hibiscus",
+            "image": "images/hibiscus-flowers.png"
+        },
+        {
+            "id": "hibiscus-simple-syrup",
+            "displayName": "Hibiscus Simple Syrup",
+            "image": "images/hibiscus-simple-syrup.png"
+        },
+        {
+            "id": "honey",
+            "displayName": "Honey",
+            "image": "images/honey.png"
+        },
+        {
+            "id": "jalapenos",
+            "displayName": "Jalapeños",
+            "image": "images/jalapenos.png"
+        },
+        {
+            "id": "jeffersons-bourbon",
+            "displayName": "Jefferson’s Bourbon",
+            "image": "images/jeffersons-bourbon.png"
+        },
+        {
+            "id": "lime-juice",
+            "displayName": "Lime Juice",
+            "image": "images/lime-juice.png"
+        },
+        {
+            "id": "malibu-rum",
+            "displayName": "Malibu Rum",
+            "image": "images/malibu-rum.png"
+        },
+        {
+            "id": "maple-syrup",
+            "displayName": "Maple Syrup",
+            "image": "images/maple-syrup.png"
+        },
+        {
+            "id": "mezcal",
+            "displayName": "Mezcal",
+            "image": "images/mezcal.png"
+        },
+        {
+            "id": "mint",
+            "displayName": "Mint",
+            "image": "images/mint.png"
+        },
+        {
+            "id": "muddled-blueberries",
+            "displayName": "Muddled Blueberries",
+            "image": "images/muddled-blueberries.png"
+        },
+        {
+            "id": "muddled-cucumber",
+            "displayName": "Muddled Cucumber",
+            "image": "images/muddled-cucumber.png"
+        },
+        {
+            "id": "muddled-fruit",
+            "displayName": "Muddled Fruit",
+            "image": "images/muddled-fruit.png"
+        },
+        {
+            "id": "muddled-lime",
+            "displayName": "Muddled Lime",
+            "image": "images/muddled-lime.png"
+        },
+        {
+            "id": "muddled-strawberries",
+            "displayName": "Muddled Strawberries",
+            "image": "images/muddled-strawberries.png"
+        },
+        {
+            "id": "olmeca-altos-blanco-tequila",
+            "displayName": "Olmeca Altos Blanco Tequila",
+            "image": "images/olmeca-altos-blanco-tequila.png"
+        },
+        {
+            "id": "passionfruit",
+            "displayName": "Passionfruit",
+            "image": "images/passionfruit.png"
+        },
+        {
+            "id": "pecan-puree",
+            "displayName": "Pecan Puree",
+            "image": "images/pecan-puree.png"
+        },
+        {
+            "id": "pineapple-brown-sugar-puree",
+            "displayName": "Pineapple Brown Sugar Puree",
+            "image": "images/pineapple-brown-sugar-puree.png"
+        },
+        {
+            "id": "pineapple-juice",
+            "displayName": "Pineapple Juice",
+            "image": "images/pineapple-juice.png"
+        },
+        {
+            "id": "pink-lemonade",
+            "displayName": "Pink Lemonade",
+            "image": "images/pink-lemonade.png"
+        },
+        {
+            "id": "pomegranate-liqueur",
+            "displayName": "Pomegranate Liqueur",
+            "image": "images/pomegranate-liqueur.png"
+        },
+        {
+            "id": "rose-puree",
+            "displayName": "Rose Puree",
+            "image": "images/rose-puree.png"
+        },
+        {
+            "id": "soho-lychee-liqueur",
+            "displayName": "Soho Lychee Liqueur",
+            "image": "images/soho-lychee-liqueur.png"
+        },
+        {
+            "id": "soda-water",
+            "displayName": "Soda Water",
+            "image": "images/soda-water.png"
+        },
+        {
+            "id": "spiced-rum",
+            "displayName": "Spiced Rum",
+            "image": "images/spiced-rum.png"
+        },
+        {
+            "id": "sugar-rim",
+            "displayName": "Sugar Rim",
+            "image": "images/sugar-rim.png"
+        },
+        {
+            "id": "tanqueray-gin",
+            "displayName": "Tanqueray Gin",
+            "image": "images/tanqueray-gin.png"
+        },
+        {
+            "id": "tanteo-jalapeno-tequila",
+            "displayName": "Tanteo Jalapeño Tequila",
+            "image": "images/tanteo-jalapeno-tequila.png"
+        },
+        {
+            "id": "tajin-rim",
+            "displayName": "Tajín Rim",
+            "image": "images/tajin-rim.png"
+        },
+        {
+            "id": "titos-vodka",
+            "displayName": "Tito’s Vodka",
+            "image": "images/titos-vodka.png"
+        },
+        {
+            "id": "toasted-coconut-rim",
+            "displayName": "Toasted Coconut Rim",
+            "image": "images/toasted-coconut-rim.png"
+        },
+        {
+            "id": "white-rum",
+            "displayName": "White Rum",
+            "image": "images/white-rum.png"
+        }
+    ]
+}

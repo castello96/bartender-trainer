@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Cocktail Practice Bar</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="app">
+            <header class="app-header">
+                <h1>Cocktail Practice Bar</h1>
+                <p>Practice making cocktails in Easy or Hard mode.</p>
+            </header>
+
+            <main>
+                <section class="controls">
+                    <div class="mode-toggle">
+                        <span>Mode:</span>
+                        <button class="mode-btn active" data-mode="easy">
+                            Easy (ingredients only)
+                        </button>
+                        <button class="mode-btn" data-mode="hard">
+                            Hard (ingredients + amounts)
+                        </button>
+                    </div>
+
+                    <div class="cocktail-controls">
+                        <button id="next-cocktail-btn" class="primary-btn">
+                            New Cocktail
+                        </button>
+                        <span
+                            id="current-cocktail-name"
+                            class="current-cocktail"
+                        >
+                            Click “New Cocktail” to begin.
+                        </span>
+                    </div>
+
+                    <div id="status-message" class="status-message">
+                        Loading configuration…
+                    </div>
+                </section>
+
+                <section class="ingredients-section">
+                    <h2>Available Ingredients</h2>
+                    <p class="hint">
+                        In Easy mode, just pick the ingredients. In Hard mode,
+                        also fill in the amounts.
+                    </p>
+                    <div id="ingredients-list" class="ingredients-grid">
+                        <!-- Ingredient cards populated by JS -->
+                    </div>
+                </section>
+
+                <section class="feedback-section">
+                    <button id="check-btn" class="primary-btn" disabled>
+                        Check Cocktail
+                    </button>
+                    <div id="feedback" class="feedback">
+                        <!-- Feedback goes here -->
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>

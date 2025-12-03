@@ -1,0 +1,543 @@
+[
+    {
+        "id": "classic-margarita",
+        "name": "CLASSIC MARGARITA",
+        "ingredients": [
+            {
+                "ingredientId": "tequila",
+                "amount": 2,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "triple-sec",
+                "amount": 1,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "citrus-juices",
+                "amount": 1,
+                "unit": "oz"
+            }
+        ]
+    },
+    {
+        "id": "spice-spice-baby",
+        "name": "SPICE SPICE BABY",
+        "ingredients": [
+            {
+                "ingredientId": "tanteo-jalapeno-tequila",
+                "amount": 2,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "citrus-juices",
+                "amount": 1,
+                "unit": "oz"
+            }
+        ]
+    },
+    {
+        "id": "mint-to-be",
+        "name": "MINT TO BE",
+        "ingredients": [
+            {
+                "ingredientId": "hibiscus-simple-syrup",
+                "amount": 0.75,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "mint",
+                "amount": 6,
+                "unit": "leaves"
+            },
+            {
+                "ingredientId": "fresh-lemonade",
+                "amount": 3,
+                "unit": "oz"
+            }
+        ]
+    },
+    {
+        "id": "coco-loco",
+        "name": "COCO LOCO",
+        "ingredients": [
+            {
+                "ingredientId": "coconut",
+                "amount": 1.5,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "guava",
+                "amount": 1.5,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "jalapenos",
+                "amount": 3,
+                "unit": "slices"
+            },
+            {
+                "ingredientId": "lime-juice",
+                "amount": 1,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "agave",
+                "amount": 0.75,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "ginger-beer",
+                "amount": 3,
+                "unit": "oz"
+            }
+        ]
+    },
+    {
+        "id": "berry-me-not",
+        "name": "BERRY ME NOT",
+        "ingredients": [
+            {
+                "ingredientId": "blackberry-strawberry-puree",
+                "amount": 1.5,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "lime-juice",
+                "amount": 1,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "soda-water",
+                "amount": 3,
+                "unit": "oz"
+            }
+        ]
+    },
+    {
+        "id": "guavarita",
+        "name": "GUAVARITA",
+        "ingredients": [
+            {
+                "ingredientId": "cazadores-reposado-tequila",
+                "amount": 2,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "guava-nectar",
+                "amount": 1.5,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "agave",
+                "amount": 0.75,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "lime-juice",
+                "amount": 1,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "tajin-rim",
+                "amount": 1,
+                "unit": "rim"
+            }
+        ]
+    },
+    {
+        "id": "honey-old-fashioned",
+        "name": "HONEY OLD FASHIONED",
+        "ingredients": [
+            {
+                "ingredientId": "whiskey",
+                "amount": 2,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "honey",
+                "amount": 0.5,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "muddled-fruit",
+                "amount": 3,
+                "unit": "pieces"
+            }
+        ]
+    },
+    {
+        "id": "strawberry-basil-mule",
+        "name": "STRAWBERRY BASIL MULE",
+        "ingredients": [
+            {
+                "ingredientId": "casamigos-blanco-tequila",
+                "amount": 2,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "basil",
+                "amount": 4,
+                "unit": "leaves"
+            },
+            {
+                "ingredientId": "lime-juice",
+                "amount": 1,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "muddled-strawberries",
+                "amount": 3,
+                "unit": "pieces"
+            },
+            {
+                "ingredientId": "agave",
+                "amount": 0.75,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "ginger-beer",
+                "amount": 3,
+                "unit": "oz"
+            }
+        ]
+    },
+    {
+        "id": "ice-loves-coco",
+        "name": "ICE LOVES COCO",
+        "ingredients": [
+            {
+                "ingredientId": "malibu-rum",
+                "amount": 1.5,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "absolut-vanilla-vodka",
+                "amount": 1,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "pineapple-juice",
+                "amount": 2,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "lime-juice",
+                "amount": 0.75,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "toasted-coconut-rim",
+                "amount": 1,
+                "unit": "rim"
+            }
+        ]
+    },
+    {
+        "id": "frostbite",
+        "name": "FROSTBITE",
+        "ingredients": [
+            {
+                "ingredientId": "titos-vodka",
+                "amount": 2,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "muddled-cucumber",
+                "amount": 3,
+                "unit": "slices"
+            },
+            {
+                "ingredientId": "fresh-lemonade",
+                "amount": 3,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "sugar-rim",
+                "amount": 1,
+                "unit": "rim"
+            }
+        ]
+    },
+    {
+        "id": "booze-clues",
+        "name": "BOOZE CLUES",
+        "ingredients": [
+            {
+                "ingredientId": "olmeca-altos-blanco-tequila",
+                "amount": 2,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "fresh-lemon-juice",
+                "amount": 1,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "blackberry-strawberry-puree",
+                "amount": 1.5,
+                "unit": "oz"
+            }
+        ]
+    },
+    {
+        "id": "blueberry-hill",
+        "name": "BLUEBERRY HILL",
+        "ingredients": [
+            {
+                "ingredientId": "tanqueray-gin",
+                "amount": 2,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "muddled-blueberries",
+                "amount": 6,
+                "unit": "berries"
+            },
+            {
+                "ingredientId": "fresh-lemonade",
+                "amount": 3,
+                "unit": "oz"
+            }
+        ]
+    },
+    {
+        "id": "passionfruit-mojito",
+        "name": "PASSIONFRUIT MOJITO",
+        "ingredients": [
+            {
+                "ingredientId": "white-rum",
+                "amount": 1.5,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "spiced-rum",
+                "amount": 0.5,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "muddled-lime",
+                "amount": 3,
+                "unit": "pieces"
+            },
+            {
+                "ingredientId": "passionfruit",
+                "amount": 1.5,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "mint",
+                "amount": 6,
+                "unit": "leaves"
+            },
+            {
+                "ingredientId": "soda-water",
+                "amount": 3,
+                "unit": "oz"
+            }
+        ]
+    },
+    {
+        "id": "lychee-rose",
+        "name": "LYCHEE ROSE",
+        "ingredients": [
+            {
+                "ingredientId": "titos-vodka",
+                "amount": 1.5,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "soho-lychee-liqueur",
+                "amount": 0.75,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "rose-puree",
+                "amount": 1,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "elderflower-liqueur",
+                "amount": 0.5,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "lime-juice",
+                "amount": 1,
+                "unit": "oz"
+            }
+        ]
+    },
+    {
+        "id": "mezcalculated",
+        "name": "MEZCALCULATED",
+        "ingredients": [
+            {
+                "ingredientId": "mezcal",
+                "amount": 2,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "pineapple-brown-sugar-puree",
+                "amount": 1.5,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "brown-sugar-rim",
+                "amount": 1,
+                "unit": "rim"
+            }
+        ]
+    },
+    {
+        "id": "nut-case",
+        "name": "NUT CASE",
+        "ingredients": [
+            {
+                "ingredientId": "jeffersons-bourbon",
+                "amount": 2,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "maple-syrup",
+                "amount": 0.5,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "pecan-puree",
+                "amount": 1,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "black-walnut-bitters",
+                "amount": 2,
+                "unit": "dash"
+            }
+        ]
+    },
+    {
+        "id": "ruby-red",
+        "name": "RUBY RED",
+        "ingredients": [
+            {
+                "ingredientId": "absolut-vodka",
+                "amount": 1.5,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "pomegranate-liqueur",
+                "amount": 1,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "elderflower-liqueur",
+                "amount": 0.5,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "fresh-orange-juice",
+                "amount": 2,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "soda-water",
+                "amount": 2,
+                "unit": "oz"
+            }
+        ]
+    },
+    {
+        "id": "skinny-margarita",
+        "name": "SKINNY MARGARITA",
+        "ingredients": [
+            {
+                "ingredientId": "olmeca-altos-blanco-tequila",
+                "amount": 1.5,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "agave",
+                "amount": 0.5,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "lime-juice",
+                "amount": 1,
+                "unit": "oz"
+            }
+        ]
+    },
+    {
+        "id": "coconut-hibiscus",
+        "name": "COCONUT HIBISCUS",
+        "ingredients": [
+            {
+                "ingredientId": "1800-coconut-tequila",
+                "amount": 1.5,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "coconut-puree",
+                "amount": 1.5,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "hibiscus-flowers",
+                "amount": 0.5,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "elderflower-liqueur",
+                "amount": 0.5,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "lime-juice",
+                "amount": 1,
+                "unit": "oz"
+            }
+        ]
+    },
+    {
+        "id": "lookin-pine",
+        "name": "LOOKIN'PINE",
+        "ingredients": [
+            {
+                "ingredientId": "pineapple-brown-sugar-puree",
+                "amount": 1.5,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "fresh-lemon-juice",
+                "amount": 1,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "ginger-beer",
+                "amount": 3,
+                "unit": "oz"
+            }
+        ]
+    },
+    {
+        "id": "citrus-mistress",
+        "name": "CITRUS MISTRESS",
+        "ingredients": [
+            {
+                "ingredientId": "classic-spiked-lemonade",
+                "amount": 2,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "vodka",
+                "amount": 1.5,
+                "unit": "oz"
+            },
+            {
+                "ingredientId": "pink-lemonade",
+                "amount": 2,
+                "unit": "oz"
+            }
+        ]
+    }
+]
