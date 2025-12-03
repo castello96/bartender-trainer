@@ -41,14 +41,16 @@ body {
     border: 1px solid #1f2937;
 }
 
-.mode-toggle {
+.mode-toggle,
+.pool-toggle {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     flex-wrap: wrap;
 }
 
-.mode-btn {
+.mode-btn,
+.pool-btn {
     border: 1px solid #4b5563;
     background: transparent;
     color: #e5e7eb;
@@ -58,7 +60,8 @@ body {
     font-size: 0.9rem;
 }
 
-.mode-btn.active {
+.mode-btn.active,
+.pool-btn.active {
     background: #22c55e;
     color: #022c22;
     border-color: #22c55e;
@@ -115,6 +118,20 @@ body {
     font-size: 0.9rem;
 }
 
+/* Category grouping */
+.ingredient-category {
+    margin-bottom: 1.25rem;
+}
+
+.ingredient-category-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0 0 0.35rem;
+    color: #d1d5db;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
 .ingredients-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -127,10 +144,10 @@ body {
     padding: 0.6rem;
     border: 1px solid #1f2937;
     display: flex;
-    flex-direction: column; /* <--- stack content vertically */
-    align-items: center; /* center everything */
+    flex-direction: column; /* vertical layout for big images */
+    align-items: center;
     gap: 0.5rem;
-    text-align: center; /* makes labels look better under the image */
+    text-align: center;
 }
 
 .ingredient-card img {
@@ -139,10 +156,11 @@ body {
     object-fit: contain;
     border-radius: 0.5rem;
     background: #0f172a;
+    flex-shrink: 0;
 }
 
 .ingredient-info {
-    flex: 1;
+    width: 100%;
 }
 
 .ingredient-name {
@@ -156,6 +174,7 @@ body {
 .amount-row {
     margin-top: 0.25rem;
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 0.35rem;
 }
@@ -214,5 +233,10 @@ body {
 @media (max-width: 600px) {
     .ingredient-card {
         padding: 0.5rem;
+    }
+
+    .ingredient-card img {
+        width: 120px;
+        height: 120px;
     }
 }

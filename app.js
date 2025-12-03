@@ -5,13 +5,38 @@ document.addEventListener("DOMContentLoaded", () => {
     const feedbackEl = document.getElementById("feedback");
     const nextCocktailBtn = document.getElementById("next-cocktail-btn");
     const checkBtn = document.getElementById("check-btn");
-    const modeButtons = document.querySelectorAll(".mode-btn");
+    const modeButtons = document.querySelectorAll(".mode-btn"); // easy/hard
+    const poolButtons = document.querySelectorAll(".pool-btn"); // training/full
+
+    const CATEGORY_LABELS = {
+        "spirits": "Spirits",
+        "liqueurs": "Liqueurs",
+        "mixers": "Mixers",
+        "juices": "Juices",
+        "syrups-sweeteners": "Syrups & Sweeteners",
+        "garnishes-muddled": "Garnishes & Muddled",
+        "house-specials": "House Specials",
+        "other": "Other"
+    };
+
+    const CATEGORY_ORDER = [
+        "spirits",
+        "liqueurs",
+        "mixers",
+        "juices",
+        "syrups-sweeteners",
+        "garnishes-muddled",
+        "house-specials",
+        "other"
+    ];
 
     let allIngredients = [];
     let recipes = [];
     let currentRecipe = null;
-    let currentMode = "easy";
+    let difficultyMode = "easy";   // easy | hard
+    let poolMode = "training";     // training | full
     let configsLoaded = false;
+    let currentAllowedIngredientIds = null; // Set or null (null = all)
 
     // Load config files
     loadConfigs();
@@ -27,7 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 configsLoaded = true;
                 statusEl.textContent =
                     'Configs loaded. Choose a mode and click "New Cocktail" to begin.';
-                renderIngredientsList();
+                checkBtn.disabled = true;
+                // We will render ingredients when a cocktail is selected
             })
             .catch((err) => {
                 console.error("Error loading configs:", err);
@@ -36,47 +62,91 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     }
 
-    function renderIngredientsList() {
+    // Render ingredients, grouped by category.
+    // allowedIds: Set of ingredient ids to show; if null, show all.
+    function renderIngredientsList(allowedIds = null) {
         ingredientsListEl.innerHTML = "";
 
+        const byCategory = new Map();
+
         allIngredients.forEach((ing) => {
-            const card = document.createElement("div");
-            card.className = "ingredient-card";
-            card.dataset.ingredientId = ing.id;
+            if (allowedIds && !allowedIds.has(ing.id)) return;
 
-            card.innerHTML = `
-        <img src="${ing.image}" alt="${ing.displayName}" />
-        <div class="ingredient-info">
-          <label>
-            <input type="checkbox" class="ingredient-checkbox" />
-            <span class="ingredient-name">${ing.displayName}</span>
-          </label>
-          <div class="amount-row">
-            <input type="number"
-                   class="ingredient-amount"
-                   min="0"
-                   step="0.25"
-                   placeholder="0" />
-            <span class="ingredient-unit"></span>
+            const cat = ing.category || "other";
+            if (!byCategory.has(cat)) {
+                byCategory.set(cat, []);
+            }
+            byCategory.get(cat).push(ing);
+        });
+
+        let categoriesRendered = 0;
+
+        CATEGORY_ORDER.forEach((catKey) => {
+            const list = byCategory.get(catKey);
+            if (!list || list.length === 0) return;
+
+            categoriesRendered++;
+
+            const section = document.createElement("section");
+            section.className = "ingredient-category";
+
+            const title = document.createElement("h3");
+            title.className = "ingredient-category-title";
+            title.textContent = CATEGORY_LABELS[catKey] || catKey;
+
+            const grid = document.createElement("div");
+            grid.className = "ingredients-grid";
+
+            list.forEach((ing) => {
+                const card = document.createElement("div");
+                card.className = "ingredient-card";
+                card.dataset.ingredientId = ing.id;
+
+                card.innerHTML = `
+          <img src="${ing.image}" alt="${ing.displayName}" />
+          <div class="ingredient-info">
+            <label>
+              <input type="checkbox" class="ingredient-checkbox" />
+              <span class="ingredient-name">${ing.displayName}</span>
+            </label>
+            <div class="amount-row">
+              <input
+                type="number"
+                class="ingredient-amount"
+                min="0"
+                step="0.25"
+                placeholder="0"
+              />
+              <span class="ingredient-unit"></span>
+            </div>
           </div>
-        </div>
-      `;
+        `;
 
-            const checkbox = card.querySelector(".ingredient-checkbox");
-            const amountInput = card.querySelector(".ingredient-amount");
+                const checkbox = card.querySelector(".ingredient-checkbox");
+                const amountInput = card.querySelector(".ingredient-amount");
 
-            // Disable/enable amount input based on checkbox in Hard mode
-            checkbox.addEventListener("change", () => {
-                if (currentMode === "hard") {
-                    amountInput.disabled = !checkbox.checked;
-                    if (!checkbox.checked) {
-                        amountInput.value = "";
+                // Toggle amount input enabled/disabled in hard mode
+                checkbox.addEventListener("change", () => {
+                    if (difficultyMode === "hard") {
+                        amountInput.disabled = !checkbox.checked;
+                        if (!checkbox.checked) {
+                            amountInput.value = "";
+                        }
                     }
-                }
+                });
+
+                grid.appendChild(card);
             });
 
-            ingredientsListEl.appendChild(card);
+            section.appendChild(title);
+            section.appendChild(grid);
+            ingredientsListEl.appendChild(section);
         });
+
+        if (categoriesRendered === 0) {
+            ingredientsListEl.innerHTML =
+                '<p class="hint">No ingredients to show yet. Click "New Cocktail" to begin.</p>';
+        }
 
         updateModeUI();
     }
@@ -88,7 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const amountInput = card.querySelector(".ingredient-amount");
             const checkbox = card.querySelector(".ingredient-checkbox");
 
-            if (currentMode === "easy") {
+            if (difficultyMode === "easy") {
                 amountRow.style.display = "none";
                 amountInput.value = "";
                 amountInput.disabled = true;
@@ -99,13 +169,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Mode buttons
+    // Difficulty buttons (easy / hard)
     modeButtons.forEach((btn) => {
         btn.addEventListener("click", () => {
             const mode = btn.dataset.mode;
-            if (mode === currentMode) return;
+            if (mode === difficultyMode) return;
 
-            currentMode = mode;
+            difficultyMode = mode;
             modeButtons.forEach((b) => {
                 b.classList.toggle("active", b === btn);
             });
@@ -114,13 +184,53 @@ document.addEventListener("DOMContentLoaded", () => {
             clearFeedback();
 
             if (currentRecipe) {
-                statusEl.textContent = `Mode changed to ${capitalize(
-                    currentMode
+                statusEl.textContent = `Difficulty: ${capitalize(
+                    difficultyMode
                 )}. Current cocktail: ${currentRecipe.name}.`;
             } else {
-                statusEl.textContent = `Mode changed to ${capitalize(
-                    currentMode
+                statusEl.textContent = `Difficulty: ${capitalize(
+                    difficultyMode
                 )}. Click "New Cocktail" to start.`;
+            }
+        });
+    });
+
+    // Ingredient pool buttons (training / full bar)
+    poolButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const pool = btn.dataset.pool;
+            if (pool === poolMode) return;
+
+            poolMode = pool;
+            poolButtons.forEach((b) => {
+                b.classList.toggle("active", b === btn);
+            });
+
+            clearFeedback();
+
+            if (!configsLoaded) return;
+
+            if (currentRecipe) {
+                // Recalculate allowed ingredients and rerender
+                currentAllowedIngredientIds = getAllowedIngredientIdsForCurrentRecipe();
+                renderIngredientsList(currentAllowedIngredientIds);
+                resetSelectionsForNewRecipe();
+                statusEl.textContent =
+                    poolMode === "training"
+                        ? "Training view: showing this cocktail's ingredients plus some distractors."
+                        : "Full bar view: all ingredients are visible.";
+            } else {
+                if (poolMode === "full") {
+                    currentAllowedIngredientIds = null;
+                    renderIngredientsList(null);
+                    statusEl.textContent =
+                        "Full bar view: all ingredients. Click \"New Cocktail\" to start practicing.";
+                } else {
+                    ingredientsListEl.innerHTML =
+                        '<p class="hint">Training view is focused per cocktail. Click "New Cocktail" to begin.</p>';
+                    statusEl.textContent =
+                        "Training view: click \"New Cocktail\" to see focused ingredients for that drink.";
+                }
             }
         });
     });
@@ -134,32 +244,65 @@ document.addEventListener("DOMContentLoaded", () => {
 
         currentRecipe = getRandomRecipe();
         cocktailNameEl.textContent = `Make a ${currentRecipe.name}`;
-        statusEl.textContent =
-            "Select the ingredients you think belong in this cocktail" +
-            (currentMode === "hard" ? " and their amounts." : ".");
+
+        currentAllowedIngredientIds = getAllowedIngredientIdsForCurrentRecipe();
+        renderIngredientsList(currentAllowedIngredientIds);
         resetSelectionsForNewRecipe();
         clearFeedback();
         checkBtn.disabled = false;
+
+        statusEl.textContent =
+            "Select the ingredients you think belong in this cocktail" +
+            (difficultyMode === "hard" ? " and their amounts." : ".");
     });
 
     // Check button
     checkBtn.addEventListener("click", () => {
         if (!currentRecipe) {
-            statusEl.textContent = 'No cocktail selected. Click "New Cocktail" first.';
+            statusEl.textContent =
+                'No cocktail selected. Click "New Cocktail" first.';
             return;
         }
 
-        if (currentMode === "easy") {
+        if (difficultyMode === "easy") {
             evaluateEasyMode();
         } else {
             evaluateHardMode();
         }
     });
 
+    function getAllowedIngredientIdsForCurrentRecipe() {
+        if (!currentRecipe) return null;
+
+        const recipeIds = currentRecipe.ingredients.map((ing) => ing.ingredientId);
+
+        if (poolMode === "full") {
+            // null = show all ingredients
+            return null;
+        }
+
+        // Training mode: show recipe ingredients + some random distractors
+        const allowed = new Set(recipeIds);
+        const maxDistractors = 5;
+
+        const distractorCandidates = allIngredients
+            .map((ing) => ing.id)
+            .filter((id) => !allowed.has(id));
+
+        // Shuffle candidates
+        distractorCandidates.sort(() => Math.random() - 0.5);
+
+        for (const id of distractorCandidates) {
+            if (allowed.size >= recipeIds.length + maxDistractors) break;
+            allowed.add(id);
+        }
+
+        return allowed;
+    }
+
     function resetSelectionsForNewRecipe() {
         const cards = ingredientsListEl.querySelectorAll(".ingredient-card");
 
-        // Build quick lookup of recipe ingredients
         const recipeMap = new Map();
         currentRecipe.ingredients.forEach((ri) =>
             recipeMap.set(ri.ingredientId, ri)
@@ -173,10 +316,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
             checkbox.checked = false;
             amountInput.value = "";
-            amountInput.disabled = currentMode === "hard"; // start disabled until checked
+            amountInput.disabled = difficultyMode === "hard" ? true : true; // will be re-enabled on check
             const recipeInfo = recipeMap.get(ingredientId);
             unitSpan.textContent = recipeInfo ? recipeInfo.unit : "";
         });
+
+        updateModeUI();
     }
 
     function evaluateEasyMode() {
@@ -271,7 +416,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const wrongAmounts = [];
         const extra = [];
 
-        // Recipe ingredients: check for missing or wrong amount
         recipeMap.forEach((recipeIng, id) => {
             if (!selectedMap.has(id)) {
                 missing.push(recipeIng);
@@ -297,7 +441,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Extra ingredients: selected but not in recipe
         selectedMap.forEach((_user, id) => {
             if (!recipeMap.has(id)) {
                 extra.push(id);
@@ -369,7 +512,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function amountEquals(a, b) {
-        // Simple exact compare with tiny tolerance
         return Math.abs(a - b) < 1e-6;
     }
 
